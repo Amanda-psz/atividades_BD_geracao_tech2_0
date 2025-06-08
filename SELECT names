@@ -40,6 +40,10 @@ ORDER BY name
 FROM world
 WHERE capital LIKE CONCAT('%', name, '%')
 
-14. 
+14. SELECT capital, name FROM world
+WHERE capital LIKE CONCAT(name, '%')
+AND LENGTH(capital) > LENGTH(name)
 
-15.
+15. SELECT name, REPLACE(capital, name, '') FROM world
+WHERE capital LIKE CONCAT('%', name, '%')
+AND capital != name
